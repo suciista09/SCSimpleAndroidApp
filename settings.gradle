@@ -7,4 +7,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "sc-simple-android-app"
-include ':app'
+include ':sc-simple-android-app'
