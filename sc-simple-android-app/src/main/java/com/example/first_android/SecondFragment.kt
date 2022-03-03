@@ -52,15 +52,20 @@ class SecondFragment : Fragment() {
             val passwordLoginString = passwordLoginInput.text.toString()
 
             //add some login
-            if(emailLoginString == "suci@test.com" && passwordLoginString == "myPassword"){
+
+            if (isLoggedIn(emailLoginString, passwordLoginString)){
                 findNavController().navigate(R.id.action_SecondFragment_to_HomepageFragment)
             }else{
-                //view.findViewById<TextView>(R.id.failedLoginTextview).requestFocus();
                 view.findViewById<TextView>(R.id.failedLoginTextview).error = ""
                 view.findViewById<TextView>(R.id.failedLoginTextview).text = "Error! email & password doesn't match"
-
             }
+
         }
+    }
+
+    private fun isLoggedIn(email: String, password: String): Boolean {
+        return email == "suci@test" &&
+                password == "myPassword"
     }
 
     override fun onDestroyView() {
